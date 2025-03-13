@@ -1,3 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using SecureLogin.UI;
 
-Console.WriteLine("Hello, World!");
+// the user can chose between registering,login,leaving
+
+IHM.MainMenu();
+
