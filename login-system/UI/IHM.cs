@@ -13,6 +13,22 @@ namespace SecureLogin.UI
             {
                 Console.WriteLine("Error, you are not authorized to make this input.");
             }
+            while (true)
+            {
+                switch (mainMenuChoice)
+                {
+                    case 0:
+                        Environment.Exit(0);
+                        break;
+                    case 1:
+                        Console.WriteLine("=== Register Page ===");
+                        Console.Write("Username: ");
+                        string username = Console.ReadLine();
+                        Console.Write("Password: ");
+                        string password = Console.ReadLine();
+                        break;
+                }
+            }
         }
     }
 }
