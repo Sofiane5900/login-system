@@ -1,3 +1,5 @@
+using SecureLogin.Services;
+
 namespace SecureLogin.UI
 {
     public class IHM
@@ -26,6 +28,7 @@ namespace SecureLogin.UI
                         string username = Console.ReadLine();
                         Console.Write("Password: ");
                         string password = Console.ReadLine();
+                        Console.WriteLine(HashingServices.getHash256(password));
                         break;
                 }
             }
