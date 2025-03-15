@@ -2,17 +2,22 @@ using SecureLogin.Models;
 
 namespace SecureLogin.Utils
 {
-    public class SaveJson
+    public static class SaveJson
     {
+        private static string filename = "";
+
         public static void CreateJson()
         {
-            string filename = "users.json";
+            filename = "users.json";
             if (!File.Exists(filename))
             {
                 FileStream createFile = File.Create(filename);
             }
         }
 
-        public static void AddUserJson(User user) { }
+        public static void AddUserToJson(User user)
+        { // create json file before writing it
+            CreateJson();
+        }
     }
 }
