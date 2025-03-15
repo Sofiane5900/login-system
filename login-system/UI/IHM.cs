@@ -1,3 +1,5 @@
+using SecureLogin.Services;
+
 namespace SecureLogin.UI
 {
     public class IHM
@@ -21,11 +23,7 @@ namespace SecureLogin.UI
                         Environment.Exit(0);
                         break;
                     case 1:
-                        Console.WriteLine("=== Register Page ===");
-                        Console.Write("Username: ");
-                        string username = Console.ReadLine();
-                        Console.Write("Password: ");
-                        string password = Console.ReadLine();
+                        RegisterService.RegisterUser();
                         break;
                 }
             }
