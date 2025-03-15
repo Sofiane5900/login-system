@@ -1,4 +1,5 @@
 using SecureLogin.Models;
+using SecureLogin.Utils;
 
 namespace SecureLogin.Services
 {
@@ -14,7 +15,7 @@ namespace SecureLogin.Services
             Console.Write("Password: ");
             string password = Console.ReadLine();
             User newUser = new User(username, password);
-            User.UserList.Add(newUser);
+            SaveJson.AddUserToJson(newUser);
             Console.WriteLine(HashingServices.getHash256(password));
         }
     }
