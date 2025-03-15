@@ -2,6 +2,4 @@
 using SecureLogin.UI;
 
 // the user can chose between registering,login,leaving
-
 IHM.MainMenu();
-
