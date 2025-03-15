@@ -23,6 +23,7 @@ namespace SecureLogin.UI
                         Environment.Exit(0);
                         break;
                     case 1:
+                        RegisterService.RegisterUser();
                         break;
                 }
             }

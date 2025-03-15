@@ -2,7 +2,7 @@ namespace SecureLogin.Models
 {
     public class User
     {
-        // ? might need a constructor later
+        public List<User> UserList = new List<User>();
         private string _Username { get; set; }
         private string _PasswordHash { get; set; }
 

@@ -1,3 +1,5 @@
+using SecureLogin.Models;
+
 namespace SecureLogin.Utils
 {
     public class SaveJson
@@ -10,5 +12,7 @@ namespace SecureLogin.Utils
                 FileStream createFile = File.Create(filename);
             }
         }
+
+        public static void AddUserJson(User user) { }
     }
 }
