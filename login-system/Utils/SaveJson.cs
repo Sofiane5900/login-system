@@ -21,9 +21,9 @@ namespace SecureLogin.Utils
             CreateJson();
             Console.WriteLine($"Before wriing file : {User.UserList.Count()}");
             User.UserList.Add(user);
-            var userToJson = JsonSerializer.Serialize(User.UserList);
+            var userToJson = JsonSerializer.Serialize(user);
             File.WriteAllText(filename, userToJson);
-            Console.WriteLine(userToJson);
+            Console.WriteLine(user._Username);
             Console.WriteLine($"After wriing file : {User.UserList.Count()}");
         }
     }

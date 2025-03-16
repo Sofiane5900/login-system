@@ -14,9 +14,9 @@ namespace SecureLogin.Services
             string username = Console.ReadLine();
             Console.Write("Password: ");
             string password = Console.ReadLine();
-            User newUser = new User(username, password);
+            string passwordHashed = HashingServices.getHash256(password);
+            User newUser = new User(username, passwordHashed);
             SaveJson.AddUserToJson(newUser);
-            Console.WriteLine(HashingServices.getHash256(password));
         }
     }
 }
