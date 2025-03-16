@@ -19,12 +19,10 @@ namespace SecureLogin.Utils
         public static void AddUserToJson(User user)
         { // create json file before writing it
             CreateJson();
-            Console.WriteLine($"Before wriing file : {User.UserList.Count()}");
             User.UserList.Add(user);
             var userToJson = JsonSerializer.Serialize(user);
             File.WriteAllText(filename, userToJson);
-            Console.WriteLine(user._Username);
-            Console.WriteLine($"After wriing file : {User.UserList.Count()}");
+            Console.WriteLine(user.Username);
         }
     }
 }
