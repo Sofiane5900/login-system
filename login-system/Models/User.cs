@@ -6,6 +6,10 @@ namespace SecureLogin.Models
         private string _Username { get; set; }
         private string _PasswordHash { get; set; }
 
-        public User(string Username, string PasswordHash) { }
+        public User(string Username, string PasswordHash)
+        {
+            _Username = Username;
+            _PasswordHash = PasswordHash;
+        }
     }
 }
