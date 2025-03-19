@@ -24,5 +24,21 @@ namespace SecureLogin.Utils
             File.WriteAllText(filename, userToJson);
             Console.WriteLine(user.username);
         }
+
+        public static bool isLoginCorrect(string password, string username)
+        {
+            if (!File.Exists(filename))
+            {
+                Console.WriteLine("This file dosen't exists.");
+            }
+            string jsonFile = File.ReadAllText(filename);
+            List<User> users = JsonSerializer.Deserialize<List<User>>(jsonFile);
+            User foundUser = users.FirstOrDefault(u => u.username == username);
+            if (foundUser is null)
+            {
+                Console.WriteLine("Unknow user..");
+                return false;
+            }
+        }
     }
 }
