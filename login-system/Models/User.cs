@@ -2,17 +2,17 @@ namespace SecureLogin.Models
 {
     public class User
     {
+        private string _username;
+        private string _uasswordHash;
+
         public static List<User> UserList { get; set; } = new List<User>();
-        private string _Username;
-        private string _PasswordHash;
+        public string username { get; set; }
+        public string passwordHash { get; set; }
 
-        public string Username { get; set; }
-        public string PasswordHash { get; set; }
-
-        public User(string username, string passwordHash)
+        public User(string Username, string PasswordHash)
         {
-            Username = username;
-            PasswordHash = passwordHash;
+            username = Username;
+            passwordHash = PasswordHash;
         }
     }
 }

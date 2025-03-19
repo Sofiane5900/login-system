@@ -20,9 +20,9 @@ namespace SecureLogin.Utils
         { // create json file before writing it
             CreateJson();
             User.UserList.Add(user);
-            var userToJson = JsonSerializer.Serialize(user);
+            var userToJson = JsonSerializer.Serialize(User.UserList);
             File.WriteAllText(filename, userToJson);
-            Console.WriteLine(user.Username);
+            Console.WriteLine(user.username);
         }
     }
 }
