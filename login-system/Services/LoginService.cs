@@ -10,12 +10,13 @@ namespace SecureLogin.Services
             Console.WriteLine("=== Login User ===");
             Console.Write("Username: ");
             string username = Console.ReadLine();
-            Console.WriteLine("Password: ");
+            Console.Write("Password: ");
             string password = Console.ReadLine();
             Console.ReadLine();
+            isLoginCorrect(username, password);
         }
 
-        public static bool isLoginCorrect(string password, string username)
+        public static bool isLoginCorrect(string username, string password)
         {
             string filename = "users.json";
             if (!File.Exists(filename))
@@ -25,7 +26,10 @@ namespace SecureLogin.Services
             string jsonFile = File.ReadAllText(filename);
             // json file is deserialize into a list
             List<User> users = JsonSerializer.Deserialize<List<User>>(jsonFile);
-            User foundUser = users.FirstOrDefault(users => users.username == username);
+
+            User foundUser = users.FirstOrDefault(u =>
+                u.username.Trim().ToLower() == username.Trim().ToLower()
+            );
             if (foundUser is null)
             {
                 Console.WriteLine("Unknow user..");

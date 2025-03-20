@@ -11,12 +11,6 @@ namespace SecureLogin.Services
             while (true)
             {
                 Console.WriteLine("=== Register Page ===");
-                // Console.WriteLine("Press 0 to go back...");
-                // int.TryParse(Console.ReadLine(), out int userChoice);
-                // if (userChoice == 0)
-                // {
-                //     return;
-                // }
                 Console.Write("Username: ");
                 string username = Console.ReadLine();
                 Console.Write("Password: ");
