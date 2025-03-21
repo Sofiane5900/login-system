@@ -8,15 +8,19 @@ namespace SecureLogin.Services
         public static void RegisterUser()
         {
             // the json will get his users from this listUsers
-
-            Console.WriteLine("=== Register Page ===");
-            Console.Write("Username: ");
-            string username = Console.ReadLine();
-            Console.Write("Password: ");
-            string password = Console.ReadLine();
-            string passwordHashed = HashingServices.getHash256(password);
-            User newUser = new User(username, passwordHashed);
-            SaveJson.AddUserToJson(newUser);
+            while (true)
+            {
+                Console.WriteLine("=== Register Page ===");
+                Console.Write("Username: ");
+                string username = Console.ReadLine();
+                Console.Write("Password: ");
+                string password = Console.ReadLine();
+                string passwordHashed = HashingServices.getHash256(password);
+                User newUser = new User(username, passwordHashed);
+                SaveJson.AddUserToJson(newUser);
+                Console.Clear();
+                return;
+            }
         }
     }
 }
