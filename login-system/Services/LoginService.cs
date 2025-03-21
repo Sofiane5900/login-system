@@ -32,7 +32,10 @@ namespace SecureLogin.Services
             );
             if (foundUser is null)
             {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("Unknow user..");
+                Console.ResetColor();
                 return false;
             }
 
@@ -41,6 +44,7 @@ namespace SecureLogin.Services
 
             if (passwordHashed == foundUser.passwordHash)
             {
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Login succeed !");
                 Console.ResetColor();
@@ -48,6 +52,10 @@ namespace SecureLogin.Services
             }
             else
             {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Wrong username or password..");
+                Console.ResetColor();
                 return false;
             }
         }
